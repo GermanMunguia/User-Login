@@ -6,20 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-/**
- * must work on  
- * 	-make a new method to work as homepage, user is brought to home page after using function,
- * 		unique method for each possible without copying sql connection? 
- *  -ask for more info when making account
- *  -method that displays info after logging in successfully
- *  -sending error codes when trying to duplicate primary key
- * 	-delete account method(sql command)
- *  
- *  -GUI  
- */
-
-
-
 public class login {
 	
 	
@@ -47,7 +33,7 @@ public class login {
 				String table = rs.getString(1) + " : " + rs.getString(2) + " : " + rs.getString(3) + " : " + email + " : " + rs.getString(5);
 				System.out.println(table); 
 				access = true; 
-				//have this sent to a method that displays myInfo/lets u change info. 
+				
 			}
 			}
 		if (access == true) return true; 
@@ -240,7 +226,7 @@ public class login {
 		return newDate; 
 	}
 	
-	//admin allows to delete any account with X user name or age range, display all data, 
+	//admin allows to delete any account with X user name or age range, display all data 
 	public static void admin(Connection con) throws SQLException {
 		Scanner sc = new Scanner(System.in);
 		String choice = sc.nextLine(); 
@@ -500,7 +486,7 @@ public class login {
 				login.main(args);
 			}
 		}
-	//  chose create option 	
+	//chose create option 	
 		if (choice.equals("c")) {
 		//username
 		System.out.println("enter a username, must be at least 4 characters long");		
